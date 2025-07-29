@@ -3,17 +3,13 @@ import Link from 'next/link';
 interface VideoCardProps {
   id: string;
   name: string;
-  thumbnailUrl: string;
 }
 
-export default function VideoCard({ id, name, thumbnailUrl }: VideoCardProps) {
+export default function VideoCard({ id, name }: VideoCardProps) {
   return (
     <Link href={`/cam/${id}`} className="block group">
-      <div className="relative w-full overflow-hidden aspect-video rounded-radius bg-indigo-700">
-        {/* TODO: Replace with Next/Image for optimization */}
-        <img src={thumbnailUrl} alt={name} className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        <h3 className="absolute bottom-0 left-0 p-4 text-lg font-bold text-white">{name}</h3>
+      <div className="flex items-center justify-center w-full h-32 p-4 transition-colors duration-300 bg-indigo-700 rounded-radius hover:bg-indigo-600">
+        <h3 className="text-lg font-bold text-center text-white">{name}</h3>
       </div>
     </Link>
   );

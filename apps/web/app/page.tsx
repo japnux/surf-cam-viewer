@@ -15,7 +15,6 @@ export default function Home() {
               key={cam.id}
               id={cam.id}
               name={cam.name}
-              thumbnailUrl={cam.thumbnailUrl}
             />
           ))}
         </div>

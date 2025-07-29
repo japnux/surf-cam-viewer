@@ -14,6 +14,11 @@ export default function VideoPlayer({ src }: { src: string }) {
       const hls = new Hls({ lowLatencyMode: true });
       hls.loadSource(src);
       hls.attachMedia(video);
+      hls.on(Hls.Events.ERROR, function (event, data) {
+        if (data.fatal) {
+          console.error('HLS.js fatal error:', data);
+        }
+      });
       return () => hls.destroy();
     }
   }, [src]);
@@ -26,7 +31,7 @@ export default function VideoPlayer({ src }: { src: string }) {
       controls
       playsInline
       className="w-full h-auto rounded-xl shadow-soft"
-      poster="/poster.webp"
+
     />
   );
 }
