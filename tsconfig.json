@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@surf-v2/typescript-config/*": ["packages/typescript-config/*"]
-    }
-  }
-}

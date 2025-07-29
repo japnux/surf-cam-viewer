@@ -1,9 +1,0 @@
-{
-  "name": "@surf-v2/typescript-config",
-  "version": "0.1.0",
-  "private": true,
-  "main": "index.js",
-  "files": [
-    "base.json"
-  ]
-}

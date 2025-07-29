@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WaveCams – Surf webcams</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<section class="hero">
+  <!-- Vidéo teaser (boucle muette) -->
+  <video src="assets/hero.mp4" autoplay muted loop playsinline></video>
+  <div class="hero-text">
+    <h2>Regarde les vagues <span>en direct</span></h2>
+    <input id="search" type="search" placeholder="Rechercher un spot..." />
+  </div>
+</section>
+
+<main class="container">
+  <section id="grid" class="grid"></section>
+</main>
+
+<script type="module" src="js/index.js"></script>
+</body>
+</html>

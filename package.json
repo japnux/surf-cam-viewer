@@ -1,15 +1,16 @@
 {
-  "name": "surf-cam-viewer-monorepo",
-  "private": true,
+  "name": "surf-cam-viewer",
+  "version": "1.0.0",
+  "description": "Visionneuse de webcams de surf",
+  "main": "index.html",
   "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "start": "python3 -m http.server 3000",
+    "format": "prettier --write \"**/*.{html,js,css}\""
   },
   "devDependencies": {
-    "prettier": "^3.2.5",
-    "turbo": "latest"
+    "prettier": "^3.2.5"
   },
-  "packageManager": "pnpm@8.9.0"
+  "dependencies": {
+    "hls.js": "^1.4.12"
+  }
 }

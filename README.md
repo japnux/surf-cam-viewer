@@ -1,73 +1,127 @@
-# Surf Webcam Viewer - Monorepo
+# 🌊 WaveCams - Surf Webcam Viewer
 
-This repository contains the source code for the Surf Webcam Viewer, a platform to watch live HLS streams from surf spots.
+Application web statique pour visualiser les webcams de surf en temps réel.
 
-The project is structured as a monorepo using [Turborepo](https://turbo.build/) and [pnpm workspaces](https://pnpm.io/workspaces).
+## ✨ Fonctionnalités
 
-- `/apps/web`: The main Next.js 15 application.
-- `/legacy`: The original static HTML/CSS/JS site.
-- `/packages`: For shared code (e.g., UI components, configs) in the future.
+- **Interface moderne** : Design épuré avec hero section minimaliste
+- **Recherche instantanée** : Filtrage temps-réel des spots par nom, ville ou département
+- **Lecture vidéo optimisée** : Streaming HLS.js avec gestion d'erreurs
+- **Design responsive** : Parfaitement adapté mobile, tablette et desktop
+- **Performance** : Lazy-loading des images, animations fluides
+- **Dark mode** : Support automatique selon les préférences système
 
-## Tech Stack
+## 🏄‍♂️ Spots disponibles
 
-- **Framework**: [Next.js 15](https://nextjs.org/) (with App Router)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-- **UI**: [shadcn-ui](https://ui.shadcn.com/) (to be added)
-- **Video Playback**: [HLS.js](https://hls-js.com/)
-- **Authentication**: [Auth.js (NextAuth.js)](https://authjs.dev/)
-- **Testing**: [Playwright](https://playwright.dev/) for End-to-End tests.
-- **Linting/Formatting**: ESLint & Prettier.
+- **Biarritz** : La Côte des Basques, La Grande Plage
+- **Bidart** : Plage du Centre
 
-## Getting Started
+## 🚀 Installation et utilisation
 
-### Prerequisites
+### Prérequis
+- Serveur web local (Python, Node.js, ou autre)
 
-- [Node.js](https://nodejs.org/en) (v20.x or later)
-- [pnpm](https://pnpm.io/installation)
-
-### Installation
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/japnux/surf-cam-viewer.git
-    cd surf-cam-viewer
-    ```
-
-2.  **Install dependencies from the root:**
-    ```bash
-    pnpm install
-    ```
-
-### Environment Variables
-
-1.  Navigate to the web application directory:
-    ```bash
-    cd apps/web
-    ```
-
-2.  Create a local environment file by copying the sample file:
-    ```bash
-    cp .env.sample .env.local
-    ```
-
-3.  Fill in the required values in `.env.local`. You will need credentials for Google OAuth and an email provider.
-
-### Running the Development Server
-
-From the root of the monorepo, run:
-
+### Lancement
 ```bash
-pnpm dev
+# Avec Python
+python3 -m http.server 3000
+
+# Avec Node.js
+npx serve .
+
+# Avec PHP
+php -S localhost:3000
 ```
 
-This will start the Next.js development server for the `web` app, typically on [http://localhost:3000](http://localhost:3000).
+Puis ouvrir [http://localhost:3000](http://localhost:3000)
 
-## Available Scripts
+## 📁 Structure du projet
 
-All scripts should be run from the root of the monorepo.
+```
+surf-v2/
+├── index.html          # Page d'accueil avec liste des spots
+├── spot.html           # Page de lecture vidéo
+├── assets/
+│   ├── style.css       # Styles pour la page d'accueil
+│   └── hero.mp4        # Vidéo de fond (optionnelle)
+├── js/
+│   ├── spots.js        # Données des spots de surf
+│   └── index.js        # Logique de recherche et affichage
+├── style.css           # Styles pour spot.html
+└── legacy/             # Ancienne version (archive)
+```
 
-- `pnpm dev`: Start the development server.
-- `pnpm build`: Build all applications for production.
-- `pnpm lint`: Run the linter across all packages.
-- `pnpm test:e2e`: Run Playwright end-to-end tests (from `apps/web` directory).
+## 🛠️ Technologies utilisées
+
+- **HTML5** : Structure sémantique
+- **CSS3** : Styles modernes, Grid, Flexbox, animations
+- **JavaScript ES6** : Modules, fonctions fléchées, destructuring
+- **HLS.js** : Lecture de flux vidéo HLS
+- **Responsive Design** : Mobile-first approach
+
+## 🎨 Design
+
+### Palette de couleurs
+- **Coral** : `#ff6b6b` (accent)
+- **Indigo** : `#4f46e5` (cartes)
+- **Blanc/Noir** : Contraste optimal pour la lisibilité
+
+### Typographie
+- **Titres** : Clamp responsive (1.8rem à 3.2rem)
+- **Interface** : Tailles fluides adaptées à tous les écrans
+
+## 📱 Responsive
+
+- **Mobile** : < 640px (1 colonne)
+- **Tablette** : 640px - 1024px (2 colonnes)
+- **Desktop** : > 1024px (3 colonnes)
+
+## 🔧 Personnalisation
+
+### Ajouter un nouveau spot
+
+Éditer `js/spots.js` :
+
+```javascript
+{
+    id: 'nouveau-spot',
+    name: 'Nom du Spot',
+    city: 'Ville',
+    dep: 'Département',
+    depName: 'Région',
+    location: 'Ville, Région',
+    coordinates: { lat: 0.0, lng: 0.0 },
+    poster: 'https://url-image.jpg',
+    pageUrl: 'https://url-source.com',
+    streamUrl: 'https://url-stream.m3u8'
+}
+```
+
+### Modifier les styles
+
+- **Page d'accueil** : `assets/style.css`
+- **Page vidéo** : `style.css`
+
+## 🚀 Déploiement
+
+Compatible avec tous les hébergeurs statiques :
+
+- **Netlify** : Glisser-déposer le dossier
+- **Vercel** : `vercel --prod`
+- **GitHub Pages** : Push sur branche `gh-pages`
+
+## 📄 Licence
+
+Projet open source - Libre d'utilisation et modification.
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! N'hésitez pas à :
+- Ajouter de nouveaux spots
+- Améliorer le design
+- Optimiser les performances
+- Corriger les bugs
+
+---
+
+*Développé avec ❤️ pour la communauté surf*
