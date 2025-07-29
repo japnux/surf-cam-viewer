@@ -3,7 +3,13 @@ import VideoPlayer from '@/components/VideoPlayer';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-export default function CamPage({ params }: { params: { id: string } }) {
+interface CamPageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default function CamPage({ params }: CamPageProps) {
   const cam = cams.find((c) => c.id === params.id);
 
   if (!cam) {
