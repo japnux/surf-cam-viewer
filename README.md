@@ -1,127 +1,175 @@
-# 🌊 WaveCams - Surf Webcam Viewer
+# 🏄‍♂️ WaveCams - Surf Webcam Viewer
 
-Application web statique pour visualiser les webcams de surf en temps réel.
+> **Visualiseur de webcams de surf en temps réel sur la côte basque**
+
+WaveCams est une application web **100% statique** permettant de visualiser en direct les conditions de surf via des webcams HD. Le projet se concentre sur les spots de surf emblématiques de la côte basque française.
 
 ## ✨ Fonctionnalités
 
-- **Interface moderne** : Design épuré avec hero section minimaliste
-- **Recherche instantanée** : Filtrage temps-réel des spots par nom, ville ou département
-- **Lecture vidéo optimisée** : Streaming HLS.js avec gestion d'erreurs
-- **Design responsive** : Parfaitement adapté mobile, tablette et desktop
-- **Performance** : Lazy-loading des images, animations fluides
-- **Dark mode** : Support automatique selon les préférences système
+- 🎥 **Streaming vidéo en direct** via HLS.js
+- 📱 **Interface responsive** (mobile, tablette, desktop)
+- 🔍 **Recherche instantanée** par nom de spot, ville ou département
+- 🌙 **Mode sombre automatique** selon les préférences système
+- ⚡ **Chargement paresseux** des images pour de meilleures performances
+- 🎨 **Design cinématique** avec hero vidéo et animations fluides
+- 📍 **Géolocalisation** des spots avec coordonnées GPS
+- 🚀 **100% statique** - Aucun serveur requis
 
-## 🏄‍♂️ Spots disponibles
+## 🏖️ Spots disponibles
 
-- **Biarritz** : La Côte des Basques, La Grande Plage
-- **Bidart** : Plage du Centre
+Actuellement **5 spots** répartis sur **3 villes** :
 
-## 🚀 Installation et utilisation
+### Biarritz (2 spots)
+- **La Côte des Basques** - Le spot mythique de Biarritz
+- **La Grande Plage** - Vue panoramique sur la baie
 
-### Prérequis
-- Serveur web local (Python, Node.js, ou autre)
+### Bidart (2 spots)  
+- **Plage du Centre** - Spot familial et accessible
+- **Parlementia** - Spot de gros avec des vagues puissantes
 
-### Lancement
+### Anglet (1 spot)
+- **Plage du VVF** - Spot populaire des Landes
+
+## 🚀 Installation
+
 ```bash
-# Avec Python
-python3 -m http.server 3000
+# Cloner le repository
+git clone https://github.com/votre-username/wavecams.git
+cd wavecams
 
-# Avec Node.js
+# Lancer un serveur local (exemple avec Python)
+python3 -m http.server 8000
+
+# Ou avec Node.js
 npx serve .
 
-# Avec PHP
-php -S localhost:3000
+# Ouvrir dans le navigateur
+open http://localhost:8000
 ```
 
-Puis ouvrir [http://localhost:3000](http://localhost:3000)
+## 📖 Utilisation
 
-## 📁 Structure du projet
+1. **Page d'accueil** : Hero vidéo avec grille responsive des spots
+2. **Recherche** : Filtrage instantané par nom, ville ou département
+3. **Visualisation** : Clic sur un spot pour accéder au flux vidéo HLS
+4. **Navigation** : Interface épurée avec retour fluide
+
+## 🏗️ Structure du projet
 
 ```
-surf-v2/
-├── index.html          # Page d'accueil avec liste des spots
-├── spot.html           # Page de lecture vidéo
+wavecams/
+├── index.html          # Page d'accueil avec hero et grille spots
+├── spot.html           # Page de visualisation vidéo HLS
 ├── assets/
-│   ├── style.css       # Styles pour la page d'accueil
-│   └── hero.mp4        # Vidéo de fond (optionnelle)
+│   ├── style.css       # Styles CSS globaux et responsive
+│   └── hero-video.mp4  # Vidéo d'arrière-plan du hero
 ├── js/
-│   ├── spots.js        # Données des spots de surf
-│   └── index.js        # Logique de recherche et affichage
-├── style.css           # Styles pour spot.html
-└── legacy/             # Ancienne version (archive)
+│   ├── spots.js        # Base de données des spots (ES6 module)
+│   ├── index.js        # Logique page d'accueil + recherche
+│   └── spot.js         # Lecteur vidéo HLS avec gestion d'erreurs
+├── favicon.svg         # Icône du site
+└── README.md           # Documentation
 ```
 
-## 🛠️ Technologies utilisées
+## 🛠️ Technologies
 
-- **HTML5** : Structure sémantique
-- **CSS3** : Styles modernes, Grid, Flexbox, animations
-- **JavaScript ES6** : Modules, fonctions fléchées, destructuring
-- **HLS.js** : Lecture de flux vidéo HLS
-- **Responsive Design** : Mobile-first approach
+- **HTML5** - Structure sémantique moderne
+- **CSS3** - Grid/Flexbox, animations, variables CSS
+- **JavaScript ES6+** - Modules natifs, async/await, APIs modernes
+- **HLS.js** - Streaming vidéo adaptatif avec fallback Safari
+- **Intersection Observer** - Lazy loading performant
 
 ## 🎨 Design
 
-### Palette de couleurs
-- **Coral** : `#ff6b6b` (accent)
-- **Indigo** : `#4f46e5` (cartes)
-- **Blanc/Noir** : Contraste optimal pour la lisibilité
-
-### Typographie
-- **Titres** : Clamp responsive (1.8rem à 3.2rem)
-- **Interface** : Tailles fluides adaptées à tous les écrans
+- **Hero cinématique** : Vidéo d'arrière-plan avec overlay
+- **Palette** : Fond blanc, texte noir, accents corail (#ff6b6b)
+- **Typographie** : System fonts pour performances optimales
+- **Grille adaptive** : 1-3 colonnes selon l'écran
+- **Micro-interactions** : Hover, transitions, loading states
 
 ## 📱 Responsive
 
-- **Mobile** : < 640px (1 colonne)
-- **Tablette** : 640px - 1024px (2 colonnes)
-- **Desktop** : > 1024px (3 colonnes)
+- **Mobile** (< 768px) : 1 colonne, navigation tactile
+- **Tablette** (768px - 1024px) : 2 colonnes, interface adaptée
+- **Desktop** (> 1024px) : 3 colonnes, expérience complète
+- **Dark mode** : Détection automatique des préférences système
 
-## 🔧 Personnalisation
+## 🌐 Déploiement
 
-### Ajouter un nouveau spot
+Projet **100% statique** déployable sur :
 
-Éditer `js/spots.js` :
+- **GitHub Pages** : `gh-pages` branch ou `/docs` folder
+- **Netlify** : Drag & drop ou Git integration
+- **Vercel** : Import GitHub repo avec optimisations auto
+- **Surge.sh** : `surge .` en une commande
 
-```javascript
-{
-    id: 'nouveau-spot',
-    name: 'Nom du Spot',
-    city: 'Ville',
-    dep: 'Département',
-    depName: 'Région',
-    location: 'Ville, Région',
-    coordinates: { lat: 0.0, lng: 0.0 },
-    poster: 'https://url-image.jpg',
-    pageUrl: 'https://url-source.com',
-    streamUrl: 'https://url-stream.m3u8'
-}
+### Exemple Netlify
+
+```bash
+npm install -g netlify-cli
+netlify deploy --prod --dir .
 ```
-
-### Modifier les styles
-
-- **Page d'accueil** : `assets/style.css`
-- **Page vidéo** : `style.css`
-
-## 🚀 Déploiement
-
-Compatible avec tous les hébergeurs statiques :
-
-- **Netlify** : Glisser-déposer le dossier
-- **Vercel** : `vercel --prod`
-- **GitHub Pages** : Push sur branche `gh-pages`
-
-## 📄 Licence
-
-Projet open source - Libre d'utilisation et modification.
 
 ## 🤝 Contribution
 
-Les contributions sont les bienvenues ! N'hésitez pas à :
-- Ajouter de nouveaux spots
-- Améliorer le design
-- Optimiser les performances
-- Corriger les bugs
+### Workflow
+1. Fork le projet
+2. Créer une branche (`git checkout -b feature/nom-feature`)
+3. Commit les changements (`git commit -m 'feat: description'`)
+4. Push (`git push origin feature/nom-feature`)
+5. Ouvrir une Pull Request
+
+### Ajouter un spot
+
+Modifier `js/spots.js` :
+
+```javascript
+export const spots = [
+  // ... spots existants
+  {
+    id: "ville-nom-spot",           // Identifiant unique
+    name: "Nom du Spot",            // Nom affiché
+    city: "Ville",                  // Ville
+    dep: "Département",             // Département (ex: "64")
+    depName: "Région",              // Région (ex: "Nouvelle-Aquitaine")
+    location: "Ville, Région",      // Localisation complète
+    coordinates: {                  // Coordonnées GPS
+      lat: 43.1234,
+      lng: -1.5678
+    },
+    poster: "https://...",          // Image de prévisualisation
+    pageUrl: "https://gosurf.fr/...", // Page source webcam
+    streamUrl: "https://...m3u8"    // Flux HLS direct
+  }
+];
+```
+
+## 🔧 Développement
+
+### Structure des données
+- **spots.js** : Array ES6 exporté avec métadonnées complètes
+- **Lazy loading** : Images chargées à la demande
+- **Error handling** : Gestion des erreurs de flux vidéo
+- **Responsive images** : Optimisation selon la taille d'écran
+
+### Performance
+- **Aucune dépendance** externe (sauf HLS.js)
+- **CSS optimisé** : Variables, animations GPU
+- **JS minimal** : Vanilla ES6, pas de framework
+- **Images lazy** : Intersection Observer natif
+
+## 📄 Licence
+
+MIT License - Voir `LICENSE` pour les détails.
+
+## 🙏 Remerciements
+
+- **GoSurf.fr** - Flux vidéo des webcams
+- **HLS.js** - Technologie de streaming
+- **Côte basque** - Inspiration et spots mythiques
 
 ---
 
-*Développé avec ❤️ pour la communauté surf*
+**🏄‍♂️ Développé avec passion pour la communauté surf basque**
+
+> Version finale : Site 100% statique, optimisé et prêt pour le déploiement
