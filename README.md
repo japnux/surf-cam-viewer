@@ -17,7 +17,7 @@ WaveCams est une application web **100% statique** permettant de visualiser en d
 
 ## 🏖️ Spots disponibles
 
-Actuellement **5 spots** répartis sur **3 villes** :
+Actuellement **7 spots** répartis sur **3 villes** :
 
 ### Biarritz (2 spots)
 - **La Côte des Basques** - Le spot mythique de Biarritz
@@ -27,8 +27,10 @@ Actuellement **5 spots** répartis sur **3 villes** :
 - **Plage du Centre** - Spot familial et accessible
 - **Parlementia** - Spot de gros avec des vagues puissantes
 
-### Anglet (1 spot)
+### Anglet (3 spots)
 - **Plage du VVF** - Spot populaire des Landes
+- **Plage des Cavaliers** - Spot de la Barre à Anglet
+- **Plage des Sables d'or** - Spot central d'Anglet
 
 ## 🚀 Installation
 

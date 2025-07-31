@@ -73,5 +73,35 @@ export const spots = [
         poster: 'https://s3.eu-central-1.amazonaws.com/phoenix-mediatheque/medium/5c1b9e757ec6f.jpeg',
         pageUrl: 'https://gosurf.fr/webcam/fr/6/Anglet-Plage-du-VVF',
         streamUrl: 'https://ds2-cache.quanteec.com/contents/encodings/live/8db1eb47-bf35-4cc5-3230-3030-6d61-63-a480-d5af1dc07ff9d/media_1.m3u8'
+    },
+    {
+        id: 'anglet-plage-des-cavaliers',
+        name: 'Plage des Cavaliers',
+        city: 'Anglet',
+        dep: 'Pyrénées-Atlantiques',
+        depName: 'Nouvelle-Aquitaine',
+        location: 'Anglet, Nouvelle-Aquitaine',
+        coordinates: {
+            lat: 43.523137223246415,
+            lng: -1.527075733080287
+        },
+        poster: 'https://www.guide-du-paysbasque.com/_bibli/annonces/3568/hd/plage-anglet-la-barre.jpg',
+        pageUrl: 'https://gosurf.fr/webcam/fr/40/Anglet-Plage-des-Cavaliers',
+        streamUrl: 'https://ds1-cache.quanteec.com/contents/encodings/live/ab545616-6ccf-4fb1-3630-3030-6d61-63-8146-78fe2f208d2fd/media_0.m3u8'
+    },
+    {
+        id: 'anglet-plage-des-sables-dor',
+        name: 'Plage des Sables d\'or',
+        city: 'Anglet',
+        dep: 'Pyrénées-Atlantiques',
+        depName: 'Nouvelle-Aquitaine',
+        location: 'Anglet, Nouvelle-Aquitaine',
+        coordinates: {
+            lat: 43.50073023129765,
+            lng: -1.5447629197387378
+        },
+        poster: 'https://www.francebleu.fr/s3/cruiser-production/2017/04/9eb7adcf-854a-4ec4-bb6f-5a891982acc1/600_vlcsnap-2017-04-13-08h28m21s13.jpg',
+        pageUrl: 'https://gosurf.fr/webcam/fr/152/Anglet-Plage-des-Sables-d-or',
+        streamUrl: 'https://ds1-cache.quanteec.com/contents/encodings/live/efb28fcb-c77e-48f2-3730-3030-6d61-63-9ec0-d8ec4bba1bacd/media_0.m3u8'
     }
 ];
